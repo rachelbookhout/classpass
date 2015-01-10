@@ -1,4 +1,9 @@
 class StudiosController < ApplicationController
+
+  def show
+    @studio = Studio.find(params[:id])
+  end
+
   def new
     @studio = Studio.new
   end
@@ -10,5 +15,11 @@ class StudiosController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def studio_params
+    params.require(:studio).permit(:name, :address, :latitude, :longitude)
   end
 end
