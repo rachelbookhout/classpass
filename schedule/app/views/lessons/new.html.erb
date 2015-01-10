@@ -15,6 +15,9 @@
 <%= f.label :period_id, "Period" %>
 <%= f.collection_select :period_id, Period.all.order(:id), :id, :time_of_day, include_blank: true %>
 
+<%= f.label :body_id, "Body Part" %>
+<%= f.collection_select :body_id, Body.all.order(:part), :id, :part, include_blank: true %>
+
 <%=f.input :teacher%>
 
 

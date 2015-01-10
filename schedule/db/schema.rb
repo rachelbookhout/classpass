@@ -11,10 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110200838) do
+ActiveRecord::Schema.define(version: 20150110213611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bodies", force: true do |t|
+    t.string "part"
+  end
 
   create_table "days", force: true do |t|
     t.string "day_of_week"
@@ -30,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150110200838) do
     t.integer  "day_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "body_id"
   end
 
   create_table "periods", force: true do |t|
