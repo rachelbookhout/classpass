@@ -2,6 +2,22 @@
 <%= f.input :name, placeholder: "What is the name of the class?" %>
 <%= f.input :start_time%>
 <%= f.input :end_time%>
+
+<%= f.label :studio_id, "Studio" %>
+<%= f.collection_select :studio_id, Studio.all.order(:name), :id, :name, include_blank: true %>
+
+<%= f.label :type_id, "Type" %>
+<%= f.collection_select :type_id, Type.all.order(:exercise), :id, :exercise, include_blank: true %>
+
+<%= f.label :day_id, "Day" %>
+<%= f.collection_select :day_id, Day.all.order(:id), :id, :day_of_week, include_blank: true %>
+
+<%= f.label :period_id, "Period" %>
+<%= f.collection_select :period_id, Period.all.order(:id), :id, :time_of_day, include_blank: true %>
+
+<%=f.input :teacher%>
+
+
 <%= f.button :submit%>
 <% end %>
 
