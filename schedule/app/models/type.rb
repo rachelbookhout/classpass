@@ -1,3 +1,3 @@
 class Type < ActiveRecord::Base
-   has_many :classes
+   has_many :lessons
 end

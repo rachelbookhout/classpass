@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :types, only:[:index, :show]
   resources :times, only:[:index, :show]
   resources :teachers, only: [:show]
+
+  root to: 'lessons#new'
 end
