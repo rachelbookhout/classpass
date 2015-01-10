@@ -1,7 +1,6 @@
- <div class = "row">
-  <div class="large-5 columns">
-    <%= f.input :address, placeholder: "Where do you live? This information is private to everyone" %>
-  </div>
-  </div>
+<%= simple_form_for @studio do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
     <%= f.hidden_field :latitude%>
     <%= f.hidden_field :longitude%>
+<%end%>
