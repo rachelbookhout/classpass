@@ -2,7 +2,8 @@ class StudiosController < ApplicationController
 
   def index
     @geojson = []
-    @requests.each do |item|
+    @studios = Studio.all
+    @studios.each do |item|
       @geojson << {
       type: 'Feature',
       geometry: {
@@ -11,10 +12,8 @@ class StudiosController < ApplicationController
       },
       properties: {
       name: item.dog_name,
-      photo: "#{item.photo}",
+      address: item.address,
       num: item.id,
-      start_time: item.start_time.to_s(:times),
-      end_time: item.end_time.to_s(:times),
       :'marker-color' => '#00607d',
       :'marker-symbol' => 'circle',
       :'marker-size' => 'medium'
