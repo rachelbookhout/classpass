@@ -11,7 +11,7 @@ class StudiosController < ApplicationController
       coordinates: [item.longitude, item.latitude]
       },
       properties: {
-      name: item.dog_name,
+      name: item.name,
       address: item.address,
       num: item.id,
       :'marker-color' => '#00607d',
@@ -24,7 +24,6 @@ class StudiosController < ApplicationController
       format.html
       format.json { render json: @geojson }
     end
-  end
   end
 
   def show
