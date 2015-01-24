@@ -3,6 +3,9 @@ var map = L.mapbox.map('map', 'rbookhout.jnj6mdfp', {
 });
 
 map.setView([42.366, -71.109], 13);
+// var map = L.map('map').setView([42.366, -71.109], 13);
+
+
 $.ajax({
   dataType: 'json',
   url: '/studios.json',
